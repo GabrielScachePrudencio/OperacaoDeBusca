@@ -111,7 +111,8 @@ if(achou == 0) printf("\n\nO numero nao foi encontrado");
 
 /*
 ///metas 
-- arrumar sistema de busca
+- arrumar sistema de busca ele nao pega os ultimos
+- trocar os breaks
 */
 
 
