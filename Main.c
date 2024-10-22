@@ -57,15 +57,17 @@ void gerarNumAleatorio(int *vetor[tam]){
 // criando e mostrando os indices 
             // basicamente como 10000/100 entao da 100 indices so que cada um desses indices é multiplicado por I entao é 0, 100, 200, 300, ate 9900
 void criarIndices(int *vetor[tam], int vetorInd[tamInd], int vetorInd2[tamInd]){
+    int valor1;
     printf("\nIndices da primeira metade:\n");
     for(int i = 0; i < tamInd/2; i++){
         vetorInd[i] = vetor[i * (tam / (2 * tamInd))]; 
         printf("%d ", vetorInd[i]);
+        valor1 = i;
     }
 
     printf("\n\nIndices da segunda metade:\n");
-    for(int i = tamInd/2; i < tamInd; i++){
-        vetorInd2[i] = vetor[(tam / 2) + i * (tam / (2 * tamInd))];
+    for(int i = valor1+1; i < tamInd; i++){
+        vetorInd2[i] = vetor[i * (tam / (2 * tamInd))];
         printf("%d ", vetorInd2[i]);
     }
 }
@@ -83,11 +85,11 @@ void buscadorDeNumeroPelosIndices(int *vetor[tam], int vetorInd[tamInd], int vet
                     if(vetor[j] == numProc){
                         achou = 1;
                         printf("\n\nO indice do numero %d eh %d e esta dentro do indice %d ou %d PRIMEIRA METADE", numProc, j, i, vetorInd[i]);
-                        j = comeco + (tam/tamInd);
+                        break;
                     
                     }   
                 } 
-            if (achou == 1) i = tamInd;
+            if (achou == 1) break;
             }
         }    
     }
@@ -114,6 +116,7 @@ void buscadorDeNumeroPelosIndices(int *vetor[tam], int vetorInd[tamInd], int vet
 
    // for(int h = 0; h <= tam)
 
+if(numProc > vetorInd2[tamInd])printf("\n\nO acima do array");
 if(achou == 0) printf("\n\nO numero nao foi encontrado");
 
 }
@@ -121,7 +124,7 @@ if(achou == 0) printf("\n\nO numero nao foi encontrado");
 
 /*
 ///metas 
-- arrumar sistema de busca ele nao pega os ultimos
+- arrumar sistema de busca 
 - trocar os breaks
 */
 
