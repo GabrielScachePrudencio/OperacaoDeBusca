@@ -114,9 +114,6 @@ void buscadorDeNumeroPelosIndices(int *vetor[tam], int vetorInd[tamInd], int vet
         }
     }
 
-   // for(int h = 0; h <= tam)
-
-if(numProc > vetorInd2[tamInd])printf("\n\nO acima do array");
 if(achou == 0) printf("\n\nO numero nao foi encontrado");
 
 }
