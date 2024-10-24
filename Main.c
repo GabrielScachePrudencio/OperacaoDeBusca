@@ -52,13 +52,15 @@ void criarIndices(int *vetor, int vetorInd[tamInd], int vetorInd2[tamInd]){
     printf("\nIndices da primeira metade:\n");
     for(int i = 0; i < tamInd / 2; i++){
         vetorInd[i] = i * (tam / (tamInd)); 
-        printf("%d ", vetor[vetorInd[i]]);
+        printf("\nIndice %d aponta para o valor %d", vetorInd[i], vetor[vetorInd[i]]);
+
     }
 
     printf("\n\nIndices da segunda metade:\n");
     for(int i = 0; i < tamInd / 2; i++){
         vetorInd2[i] = (tam/2) + i * (tam / tamInd);
-        printf("%d ", vetor[vetorInd2[i]]);
+        printf("\nIndice %d aponta para o valor %d", vetorInd2[i], vetor[vetorInd2[i]]);
+
     }
 }
 
@@ -66,32 +68,37 @@ void criarIndices(int *vetor, int vetorInd[tamInd], int vetorInd2[tamInd]){
 
 void buscadorDeNumeroPelosIndices(int *vetor, int vetorInd[tamInd], int vetorInd2[tamInd], int numProc) {
     int achou = 0;
-
+    
     // Verificando se o número está na primeira metade
     if (numProc <= vetor[vetorInd[tamInd / 2 - 1]]) {
         for (int i = 0; i < tamInd / 2 && achou != 1; i++) {
-            int comeco = vetorInd[i];
-            int fim = (i + 1 < tamInd / 2) ? vetorInd[i + 1] : tam / 2;
+            if(numProc >= vetor[vetorInd[i]] && achou != 1){
+                int comeco = vetorInd[i];
+                int fim = (i + 1 < tamInd / 2) ? vetorInd[i + 1] : tam / 2;
 
-            for (int j = comeco; j < fim && achou != 1; j++) {
-                if (vetor[j] == numProc) {
-                    achou = 1;
-                    printf("\n\nO numero %d foi encontrado no indice %d (primeira metade indice: %d)\n", numProc, j, vetorInd[i]);
+                for (int j = comeco; j < fim && achou != 1; j++) {
+                    if (vetor[j] == numProc) {
+                        achou = 1;
+                        printf("\n\nO numero %d foi encontrado na posicao: %d (primeira metade i: %d indice: %d que representa o numero do vetor: %d)\n", numProc, j, i, vetorInd[i], vetor[vetorInd[i]]);
+                    }
                 }
             }
         }
     }
 
-    // Verificando se o número está na segunda metade
     else if (numProc > vetor[vetorInd[tamInd / 2 - 1]]) {
         for (int i = 0; i < tamInd / 2 && achou != 1; i++) {
-            int comeco = vetorInd2[i];
-            int fim = (i + 1 < tamInd / 2) ? vetorInd2[i + 1] : tam;
+            if(numProc >= vetor[vetorInd2[i]] && achou != 1){
 
-            for (int j = comeco; j < fim && achou != 1; j++) {
-                if (vetor[j] == numProc) {
-                    achou = 1;
-                    printf("\n\nO numero %d foi encontrado no indice %d (segunda metade indice: %d)\n", numProc, j, vetorInd2[i]);
+                int comeco = vetorInd2[i];
+                int fim = (i + 1 < tamInd / 2) ? vetorInd2[i + 1] : tam;
+
+
+                for (int j = comeco; j < fim && achou != 1; j++) {
+                    if (vetor[j] == numProc) {
+                        achou = 1;
+                        printf("\n\nO numero %d foi encontrado na posicao: %d (segunda metade i: %d indice: %d que representa o numero do vetor: %d)\n", numProc, j, i, vetorInd2[i], vetor[vetorInd2[i]]);
+                    }
                 }
             }
         }
@@ -106,10 +113,9 @@ void buscadorDeNumeroPelosIndices(int *vetor, int vetorInd[tamInd], int vetorInd
 
 /*
 ///metas 
-- testar para ver se ta tudo certo mesmo
 - fazer o readme
 - fazer relatorio
-- gravar o videp e postra no ytb
+- gravar o videp e postar no ytb
 */
 
 
