@@ -76,7 +76,7 @@ void buscadorDeNumeroPelosIndices(int *vetor, int vetorInd[tamInd], int vetorInd
             for (int j = comeco; j < fim && achou != 1; j++) {
                 if (vetor[j] == numProc) {
                     achou = 1;
-                    printf("\n\nO numero %d foi encontrado no indice %d (primeira metade %d)\n", numProc, j, vetorInd[i]);
+                    printf("\n\nO numero %d foi encontrado no indice %d (primeira metade indice: %d)\n", numProc, j, vetorInd[i]);
                 }
             }
         }
@@ -91,7 +91,7 @@ void buscadorDeNumeroPelosIndices(int *vetor, int vetorInd[tamInd], int vetorInd
             for (int j = comeco; j < fim && achou != 1; j++) {
                 if (vetor[j] == numProc) {
                     achou = 1;
-                    printf("\n\nO numero %d foi encontrado no indice %d (segunda metade)\n", numProc, j);
+                    printf("\n\nO numero %d foi encontrado no indice %d (segunda metade indice: %d)\n", numProc, j, vetorInd2[i]);
                 }
             }
         }
@@ -106,8 +106,10 @@ void buscadorDeNumeroPelosIndices(int *vetor, int vetorInd[tamInd], int vetorInd
 
 /*
 ///metas 
-- arrumar sistema de busca 
-- trocar os breaks
+- testar para ver se ta tudo certo mesmo
+- fazer o readme
+- fazer relatorio
+- gravar o videp e postra no ytb
 */
 
 
