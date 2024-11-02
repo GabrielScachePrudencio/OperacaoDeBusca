@@ -21,7 +21,6 @@ III. Busca de Número: Através dos índices criados, o programa realiza uma bus
 
 3. buscadorDeNumeroPelosIndices(): Realiza a busca do número fornecido pelo usuário, usando os índices para dividir a busca entre as duas metades do vetor.
 
-Este projeto utiliza apenas bibliotecas padrão da linguagem C:
 
 Como Funciona a Busca de Números
 
@@ -43,6 +42,7 @@ Dentro da metade selecionada, o código usa os índices para restringir a faixa 
 Se o número é encontrado, a posição é exibida.
 Caso contrário, uma mensagem informa que o número não foi encontrado.
 
+Este projeto utiliza apenas bibliotecas padrão da linguagem C:
 
 <stdio.h>: Para entrada e saída.
 
