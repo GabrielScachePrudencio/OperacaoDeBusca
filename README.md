@@ -23,6 +23,27 @@ III. Busca de Número: Através dos índices criados, o programa realiza uma bus
 
 Este projeto utiliza apenas bibliotecas padrão da linguagem C:
 
+Como Funciona a Busca de Números
+
+1. Divisão do Vetor em Índices
+A função criarIndices divide o vetor em duas metades, criando dois vetores de índices (vetorInd e vetorInd2). Cada índice aponta para uma posição no vetor original.
+
+2. Busca pelo Número
+A busca é realizada na função buscadorDeNumeroPelosIndices. O usuário insere o número a ser procurado, e o programa verifica em qual metade ele está baseado nos valores dos índices:
+
+Primeira Metade: Se o número é menor ou igual ao valor máximo da primeira metade, ele será procurado nela.
+
+Segunda Metade: Caso contrário, a busca acontece na segunda metade.
+
+3. Processo de Busca em Subfaixas
+Dentro da metade selecionada, o código usa os índices para restringir a faixa onde o número pode estar. Em cada faixa, ele verifica de comeco a fim se o número procurado está presente. Isso evita uma busca completa, verificando apenas nas posições mais prováveis.
+
+
+4. Resultado da Busca
+Se o número é encontrado, a posição é exibida.
+Caso contrário, uma mensagem informa que o número não foi encontrado.
+
+
 <stdio.h>: Para entrada e saída.
 
 <stdlib.h>: Para alocação de memória.
