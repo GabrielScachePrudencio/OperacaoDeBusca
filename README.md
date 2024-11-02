@@ -1,5 +1,5 @@
 # Operação de busca / Projeto da Matéria de Estrutura de Dados do prof. Edinilson Geraldo Rossi
-# Este trabalho foi fruta da parceria entre Wesley Martins e Gabriel Scache
+# Este trabalho foi fruto da parceria entre Wesley Martins e Gabriel Scache
 Este projeto implementa um programa em C para gerar uma lista de números aleatórios, cria índices para facilitar a busca, e realizar a busca eficiente de um número na lista usando esses índices.
 
 Descrição do Projeto
