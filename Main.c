@@ -9,7 +9,7 @@
 void gerarNumAleatorio(int *vetor);
 void criarIndices(int *vetor, int vetorInd[tamInd], int vetorInd2[tamInd]);
 void buscadorDeNumeroPelosIndices(int *vetor, int vetorInd[tamInd], int vetorInd2[tamInd], int numProc);
-
+ 
 
 void main(){
     srand(time(NULL)); 
@@ -112,12 +112,7 @@ void buscadorDeNumeroPelosIndices(int *vetor, int vetorInd[tamInd], int vetorInd
 
 
 
-/*
-///metas 
-- fazer o readme
-- fazer relatorio
-- gravar o videp e postar no ytb
-*/
+
 
 
 
