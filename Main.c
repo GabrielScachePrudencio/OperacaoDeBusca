@@ -4,7 +4,7 @@
 #include <string.h>
 
 #define tam 1000000
-#define tamInd 200
+#define tamInd 200//100 para cada vetor de indice
 
 void gerarNumAleatorio(int *vetor);
 void criarIndices(int *vetor, int vetorInd[tamInd], int vetorInd2[tamInd]);
@@ -14,7 +14,7 @@ void buscadorDeNumeroPelosIndices(int *vetor, int vetorInd[tamInd], int vetorInd
 void main(){
     srand(time(NULL)); 
     
-    int *numGeradosAleatoriamente = malloc(sizeof(int) * tam);
+    int *numGeradosAleatoriamente = malloc(sizeof(int) * tam); // malloc aloca dinamicamente 1 milhao na memoria 
     
     int indicesDosNumerosAleatoriosOrdenados1[tamInd/2];
     int indicesDosNumerosAleatoriosOrdenados2[tamInd/2];
@@ -36,7 +36,7 @@ void main(){
 }
 
 void gerarNumAleatorio(int *vetor){
-    vetor[0] = rand() % 100;
+    vetor[0] = rand() % 10;
     for(int i = 1; i < tam; i++){
         vetor[i] = vetor[i-1] + (rand() % 10) + 1;
         printf(" %d", vetor[i]);
@@ -51,7 +51,8 @@ void gerarNumAleatorio(int *vetor){
 void criarIndices(int *vetor, int vetorInd[tamInd], int vetorInd2[tamInd]){    
     printf("\nIndices da primeira metade:\n");
     for(int i = 0; i < tamInd / 2; i++){
-        vetorInd[i] = i * (tam / (tamInd)); 
+        vetorInd[i] = i * (tam / (tamInd)); // 0 * 1000000/200 = 0*5000 = 0
+        // 1 * 5000 = 5000 vetorComNumero[vetorINdice[1]] 
         printf("\nIndice %d aponta para o valor %d", vetorInd[i], vetor[vetorInd[i]]);
 
     }
@@ -74,7 +75,7 @@ void buscadorDeNumeroPelosIndices(int *vetor, int vetorInd[tamInd], int vetorInd
         for (int i = 0; i < tamInd / 2 && achou != 1; i++) {
             if(numProc >= vetor[vetorInd[i]] && achou != 1){
                 int comeco = vetorInd[i];
-                int fim = (i + 1 < tamInd / 2) ? vetorInd[i + 1] : tam / 2;
+                int fim = (i + 1 < tamInd / 2) ? vetorInd[i + 1] : tam / 2;//
 
                 for (int j = comeco; j < fim && achou != 1; j++) {
                     if (vetor[j] == numProc) {
@@ -90,14 +91,14 @@ void buscadorDeNumeroPelosIndices(int *vetor, int vetorInd[tamInd], int vetorInd
         for (int i = 0; i < tamInd / 2 && achou != 1; i++) {
             if(numProc >= vetor[vetorInd2[i]] && achou != 1){
 
-                int comeco = vetorInd2[i];
+                int comeco = vetorInd2[i];//455000
                 int fim = (i + 1 < tamInd / 2) ? vetorInd2[i + 1] : tam;
 
 
                 for (int j = comeco; j < fim && achou != 1; j++) {
                     if (vetor[j] == numProc) {
                         achou = 1;
-                        printf("\n\nO numero %d foi encontrado na posicao: %d (segunda metade i: %d indice: %d que representa o numero do vetor: %d)\n", numProc, j, i, vetorInd2[i], vetor[vetorInd2[i]]);
+                        printf("\n\nO numero %d foi encontrado na posicao: %d (segunda metade i: %d indice: %d)\n", numProc, j, i, vetorInd2[i]);
                     }
                 }
             }
