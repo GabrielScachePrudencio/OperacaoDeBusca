@@ -98,7 +98,7 @@ void buscadorDeNumeroPelosIndices(int *vetor, int vetorInd[tamInd], int vetorInd
                 for (int j = comeco; j < fim && achou != 1; j++) {
                     if (vetor[j] == numProc) {
                         achou = 1;
-                        printf("\n\nO numero %d foi encontrado na posicao: %d (segunda metade i: %d indice: %d)\n", numProc, j, i, vetorInd2[i]);
+                        printf("\n\nO numero %d foi encontrado na posicao: %d (segunda metade i: %d indice: %d  que representa o numero: %d)\n", numProc, j, i, vetorInd2[i], vetor[vetorInd2[i]]);
                     }
                 }
             }
